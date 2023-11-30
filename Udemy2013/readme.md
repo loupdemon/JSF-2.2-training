@@ -2,7 +2,8 @@ Welcome to JSF Primefaces tutorial. JavaServer Faces is one of the leading frame
 <h1>JSF Primefaces Tutorial</h1>
 
 The process of rendering the view in JSF does pass through what known as JSF lifecycle. This tutorial isn’t intended for providing you a detailed discussion of how lifecycle works or how could we deal with. It’s just a notification about what you should know about the JSF framework and how get JSF view ready for rendering.
-<image src="JSF-LifecycleI.png" alt="JSF Lifecycle" /><br/>
+
+<image src="images/JSF-LifecycleI.png" alt="JSF Lifecycle" /><br/>
 JSF has two major implementations till the time in which the article written, oracle implementation Mojarra and Apache MyFaces implementation. Several JSF libraries has been coming into existence, Richfaces, IceFaces, Primefaces, MyFaces, etc and one of the most lead library that used intensively and has an excellent reputation is Primefaces. Primefaces cellabrate before months ago by releasing the Primefaces 5 which will consider the subject of this tutorial and next coming tutorials. For being able of using the primefaces 5, you must install and configure it into your project. Either you are going to use a simple text editor or an enterprise development environment, by ending of this tutorial you will be ready for discovering the all Primefaces vomponrnts.
 
 <h2>What’s New In JSF 2</h2>
@@ -25,14 +26,14 @@ It’s obvious that we’ve used the Tomcat 7 for deploying the application and 
 [Danger](#){.btn .btn-danger}
 [Link](#){.btn .btn-link}
 
-<image src="PrimeFaces-Example-Project.png" alt="JSF Primefaces 5" /><br/>
+<image src="images/PrimeFaces-Example-Project.png" alt="JSF Primefaces 5" /><br/>
 
 <h2>Creating Eclipse Project</h2>
 Eclipse IDE support the development of web project under Dynamic Project umbrella. For creating a dynamic project just follow the below steps:
 
 Open Eclipse IDE
 Right-Click on the project explorer space and select New - Dynamic Web Project
-<image src="New-Dynamic-Web-Project.png" alt="JSF Primefaces 5" /><br/>
+<image src="images/New-Dynamic-Web-Project.png" alt="JSF Primefaces 5" /><br/>
 JSF Primefaces, Primefaces Tutorial, Primefaces Example, JSF Primefaces Eclipse
 Complete the project creation process by setting up the project name, target runtime, source folder, context root, content directory and web.xml
 
@@ -46,7 +47,7 @@ As we’ve mentioned earlier, our goal is to use JSF/Primefaces for developing w
 
 After installing the JSF library, the JSF capabilities window looks like
 
-<image src="JSF-Library-Installed.png" alt="JSF Primefaces 5" /><br/>
+<image src="images/JSF-Library-Installed.png" alt="JSF Primefaces 5" /><br/>
 
 By end of this phase, you have a web application with jsf capabilities.
 
@@ -63,21 +64,21 @@ Create a managed bean named ViewEmployeesManagedBean
 Create a Pojo named Employee that contains EmployeeName and EmployeeId
 Create a Primefaces view in order to consume the employees list in the defined managed bean
 
-<image src="jsf_tutorial1.png" alt="JSF Primefaces 5" /><br/>
-<image src="jsf-java-tutorial.png" alt="JSF Primefaces 5" /><br/>
+<image src="images/jsf_tutorial1.png" alt="JSF Primefaces 5" /><br/>
+<image src="images/sf-java-tutorial.png" alt="JSF Primefaces 5" /><br/>
 Notice the use of JSF annotations and and use of PostConstruct annotation to populate the list of employees.
-<image src="jsf html tutorial.png" alt="JSF Primefaces 5" /><br/>
+<image src="images/jsf html tutorial.png" alt="JSF Primefaces 5" /><br/>
 Notice the use of dataTable element to create the table from the managed bean properties. PrimeFaces and JSF takes care of passing these to the view page for rendering. If you are from Servlet background, you can easily see that number of steps are cut down - in servlet environment, we first handle the request in servlet, create the model data, set it as attribute in request/session and then forward it to the JSP page to render the response.
-<image src="jsf xml tutorial.png" alt="JSF Primefaces 5" /><br/>
+<image src="images/jsf xml tutorial.png" alt="JSF Primefaces 5" /><br/>
 Notice that javax.faces.webapp.FacesServlet is the controller class, this is where we plugin JSF into our web application.
-<image src="config jsf tutorial.png"   alt="JSF Primefaces 5" /><br/>
+<image src="images/config jsf tutorial.png"   alt="JSF Primefaces 5" /><br/>
 This is where we provide JSF components configurations such as managed beans, i18n global messages, custom view handlers and custom factory classes. Since we are using annotations and it’s a simple project, there is no configuration done here, but we will see it’s usage in future posts. Now when you will run this, you will get output as shown in below image.
-<image src="JSF-Primefaces-Simple-Demo.png" alt="JSF Primefaces 5" /><br/>
+<image src="images/JSF-Primefaces-Simple-Demo.png" alt="JSF Primefaces 5" /><br/>
 
 <h2>Convert Into Maven</h2>
 Maven is the most preferred way to manage the java projects build and dependencies, so here we will see how we can convert it to Maven. Eclipse IDE provide the option to convert your Dynamic Web Project into Maven. Maven will help you controlling and managing the required dependencies. Just right click on the created project and from configure menu select Convert into Maven Project. Once you have changed your project into Maven, you have to add the required dependencies for making the project compilable by the Maven itself. The supposed Maven XML that you gain once you’ve converted the application into Maven project and after adding the required libraries for JSF 2, Primefaces and other is:
-<image src="tuto1.png" alt="JSF Primefaces 5" /><br/>
-<image src="tuto 2.png" alt="JSF Primefaces 5" /><br/>
+<image src="images/tuto1.png" alt="JSF Primefaces 5" /><br/>
+<image src="images/tuto 2.png" alt="JSF Primefaces 5" /><br/>
 
 And by executing the mvn clean package against the project, you will get a WAR file ready for being deployed against any of the Java EE container. Just deploy and examine.
 
