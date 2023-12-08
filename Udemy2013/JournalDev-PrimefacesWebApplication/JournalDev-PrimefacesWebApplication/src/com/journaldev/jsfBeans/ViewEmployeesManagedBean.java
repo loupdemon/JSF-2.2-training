@@ -1,40 +1,32 @@
-package com.journaldev.jsfBeans;
+package com.journaldev.data.jsfBeans;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.journaldev.data.Employee;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-
-import com.journaldev.data.Employee;
+import java.util.ArrayList;
+import java.util.List;
 
 @ManagedBean
 @SessionScoped
 public class ViewEmployeesManagedBean {
-	private List<Employee> employees = new ArrayList<Employee>();
-	
-	public ViewEmployeesManagedBean(){
-		
-	}
-	
+
+	private List<Employee> employees;
+
 	@PostConstruct
-	public void populateEmployeeList(){
-		for(int i = 1 ; i <= 10 ; i++){
+	public void init() {
+		employees = new ArrayList<>();
+
+		for (int i = 1; i <= 10; i++) {
 			Employee emp = new Employee();
 			emp.setEmployeeId(String.valueOf(i));
-			emp.setEmployeeName("Employee#"+i);
-			this.employees.add(emp);
+			emp.setEmployeeName("Employee#" + i);
+			employees.add(emp);
 		}
 	}
 
 	public List<Employee> getEmployees() {
 		return employees;
 	}
-
-	public void setEmployees(List<Employee> employees) {
-		this.employees = employees;
-	}
-	
-	
 }
